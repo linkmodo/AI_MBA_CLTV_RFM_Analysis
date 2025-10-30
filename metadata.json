@@ -1,0 +1,5 @@
+{
+  "name": "AI-Powered CLTV & RFM Analysis",
+  "description": "An advanced analytical tool to upload customer transaction data, perform automated cleaning and EDA, conduct RFM analysis, predict Customer Lifetime Value (CLTV), and receive AI-driven insights and recommendations at every step.",
+  "requestFramePermissions": []
+}
