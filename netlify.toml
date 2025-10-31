@@ -2,7 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
-# Disable secret detection for client-side environment variables
-# Client-side apps MUST expose API keys in the browser
+# Build configuration
 [build.environment]
-  NETLIFY_SKIP_SECRET_DETECTION = "true"
+  NODE_VERSION = "18"
+
+# Redirect rules for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
