@@ -1,12 +1,18 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  functions = "netlify/functions"
 
 # Build configuration
 [build.environment]
   NODE_VERSION = "18"
 
-# Redirect rules for SPA
+# Serverless functions configuration
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Redirect rules for SPA (must come after API routes)
 [[redirects]]
   from = "/*"
   to = "/index.html"

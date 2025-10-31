@@ -29,32 +29,53 @@ A comprehensive customer analytics dashboard featuring AI-powered insights for C
    npm install
    ```
 
-3. **Configure environment variables**
+3. **Install Netlify CLI** (for local development)
+   ```bash
+   npm install -g netlify-cli
+   ```
+
+4. **Configure environment variables**
    ```bash
    # Copy the example environment file
    cp .env.example .env
    
    # Edit .env and add your Gemini API key
-   # VITE_GEMINI_API_KEY=your_actual_api_key_here
+   # GEMINI_API_KEY=your_actual_api_key_here
    ```
 
-4. **Run the development server**
+5. **Run the development server**
    ```bash
-   npm run dev
+   netlify dev
    ```
+   
+   This starts both the Vite dev server and Netlify Functions locally.
 
-5. **Open your browser**
-   - Navigate to `http://localhost:5173`
+6. **Open your browser**
+   - Navigate to `http://localhost:8888`
 
 ## 🔑 Environment Variables
+
+### 🔒 Secure Architecture
+
+This app uses **Netlify Serverless Functions** to keep your API key secure. The key **never reaches the browser**.
+
+### Local Development
 
 Create a `.env` file in the root directory with:
 
 ```env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
+### Netlify Deployment
+
+Set the environment variable in Netlify Dashboard:
+- Go to: **Site settings** → **Environment variables**
+- Add: `GEMINI_API_KEY` with your API key value
+
 **Important**: Never commit your `.env` file to version control. It's already included in `.gitignore`.
+
+📚 **See [SERVERLESS_SETUP.md](./SERVERLESS_SETUP.md) for detailed setup instructions.**
 
 ## 📦 Build for Production
 
